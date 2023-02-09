@@ -51,11 +51,77 @@
             android:layout_height="wrap_content"
             android:id="@+id/idEdtPassword"
             android:importantForAutofill="no"
-            android:inputType="textEmailAddress"
+            android:inputType="textPassword"
             android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:textSize="14sp"/>
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/idTLCnfPasswd"
+        android:layout_below="@+id/idTLpassword"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="20dp"
+        android:hint="Confirm Password"
+        style="@style/TextInputLayout"
+        android:textColorHint="@color/white"
+        android:padding="5dp"
+        app:hintTextColor="@color/white">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/idEdtCnfPassword"
+            android:importantForAutofill="no"
+            android:inputType="textPassword"
+            android:textColor="@color/white"
+            android:textColorHint="@color/white"
+            android:textSize="14sp"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Register"
+        android:textColor="@color/white"
+        android:layout_below="@+id/idTLCnfPasswd"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="40dp"
+        android:id="@+id/registerbtn"
+        android:textAllCaps="false"
+        android:background="@drawable/custom_button_back" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/registerbtn"
+        android:gravity="center"
+        android:id="@+id/registertv"
+        android:text="Already a user? Login Here"
+        android:textColor="@color/white"
+        android:layout_marginTop="30dp"
+        android:textAllCaps="false"
+        android:textSize="18sp"
+        />
+
+    <ProgressBar
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/pbloading"
+        android:indeterminate="true"
+        android:indeterminateDrawable="@drawable/progress_back"
+        android:visibility="gone"
+
+        />
+
+
 
 </RelativeLayout>
