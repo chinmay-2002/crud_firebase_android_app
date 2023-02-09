@@ -53,23 +53,23 @@ public class RegistrationActivity extends AppCompatActivity {
                 String password = edtPasswd.getText().toString();
                 String cnfpasswd = edtCnfPasswd.getText().toString();
                 if(!password.equals(cnfpasswd)){
-                    Toast.makeText(RegistrationActivity.this, "Please Check the Password", Toast.LENGTH_SHORT);
+                    Toast.makeText(RegistrationActivity.this, "Please Check the Password", Toast.LENGTH_SHORT).show();
                 }
-                else if(TextUtils.isEmpty(username) && TextUtils.isEmpty(password) && TextUtils.isEmpty(cnfpasswd)   ){
-                    Toast.makeText(RegistrationActivity.this, "Please add all credentials", Toast.LENGTH_SHORT);
+                else if(TextUtils.isEmpty(username) || TextUtils.isEmpty(password) || TextUtils.isEmpty(cnfpasswd)   ){
+                    Toast.makeText(RegistrationActivity.this, "Please add all credentials", Toast.LENGTH_SHORT).show();
                 }else{
                     mAuth.createUserWithEmailAndPassword(username,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if(task.isSuccessful()){
                                 loadingPB.setVisibility(View.GONE);
-                                Toast.makeText(RegistrationActivity.this, "Registration Completed", Toast.LENGTH_SHORT);
+                                Toast.makeText(RegistrationActivity.this, "Registration Completed", Toast.LENGTH_SHORT).show();
                                 Intent i = new Intent(RegistrationActivity.this, LoginActivity.class);
                                 startActivity(i);
                                 finish();
                             }else{
                                 loadingPB.setVisibility(View.GONE);
-                                Toast.makeText(RegistrationActivity.this, "Failed to Register..!", Toast.LENGTH_SHORT);
+                                Toast.makeText(RegistrationActivity.this, "Failed to Register..!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
