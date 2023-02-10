@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/idRLBSheet"
+    android:background="@color/blue_shade_1">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:padding="4dp"
+        android:id="@+id/productName"
+        android:text="Product name"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:textStyle="bold"/>
+    
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="4dp"
+        android:layout_below="@id/productName"
+        android:src="@mipmap/ic_launcher"
+        android:padding="4dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/prodimg"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Description"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:padding="3dp"
+        android:layout_margin="4dp"
+        android:textSize="15sp"
+        android:id="@+id/description"
+        android:layout_below="@id/productName"
+        android:layout_toRightOf="@+id/prodimg"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Suited For"
+        android:layout_toRightOf="@+id/prodimg"
+        android:padding="3dp"
+        android:layout_margin="4dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/suited"
+        android:textSize="15sp"
+        android:layout_below="@id/description" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/prodimg"
+        android:text="Price"
+        android:padding="3dp"
+        android:layout_margin="4dp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:id="@+id/price"
+        android:textSize="18sp"
+        android:layout_below="@id/suited" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_below="@id/prodimg">
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:textAllCaps="false"
+            android:text="Edit Course"
+            android:id="@+id/editCoursebtn"
+            />
+        <Button
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:textAllCaps="false"
+            android:text="View Details"
+            android:id="@+id/viewDetailsBtn"
+            />
+
+    </LinearLayout>
+
+</RelativeLayout>

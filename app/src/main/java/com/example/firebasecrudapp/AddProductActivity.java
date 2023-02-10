@@ -46,6 +46,7 @@ public class AddProductActivity extends AppCompatActivity {
         addProduct.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                progressBar.setVisibility(View.VISIBLE);
                 String prodname = pname.getText().toString();
                 String prodprice = pprice.getText().toString();
                 String suitedfor = psuited.getText().toString();
@@ -59,6 +60,7 @@ public class AddProductActivity extends AppCompatActivity {
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        progressBar.setVisibility(View.GONE);
                         databaseReference.child(ProductId).setValue(productRVModal);
                         Toast.makeText(AddProductActivity.this, "Product Added", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(AddProductActivity.this, MainActivity.class ));
