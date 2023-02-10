@@ -6,15 +6,18 @@
     android:background="@color/blue_shade_1">
 
     <TextView
+        android:id="@+id/productName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:padding="4dp"
-        android:id="@+id/productName"
-        android:text="Product name"
+        android:text="Hotel name"
         android:textColor="@color/white"
         android:textSize="15sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
     
     <ImageView
         android:layout_width="100dp"
@@ -52,18 +55,22 @@
         android:id="@+id/suited"
         android:textSize="15sp"
         android:layout_below="@id/description" />
+
     <TextView
+        android:id="@+id/price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/suited"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginBottom="4dp"
         android:layout_toRightOf="@+id/prodimg"
-        android:text="Price"
         android:padding="3dp"
-        android:layout_margin="4dp"
+        android:text="Price"
         android:textColor="@color/white"
-        android:textStyle="bold"
-        android:id="@+id/price"
         android:textSize="18sp"
-        android:layout_below="@id/suited" />
+        android:textStyle="bold" />
 
 
     <LinearLayout
@@ -79,7 +86,7 @@
             android:layout_weight="1"
             android:layout_margin="4dp"
             android:textAllCaps="false"
-            android:text="Edit Course"
+            android:text="Edit Hotel"
             android:id="@+id/editCoursebtn"
             />
         <Button
@@ -88,7 +95,7 @@
             android:layout_height="match_parent"
             android:layout_margin="4dp"
             android:textAllCaps="false"
-            android:text="View Details"
+            android:text="View Website"
             android:id="@+id/viewDetailsBtn"
             />
 

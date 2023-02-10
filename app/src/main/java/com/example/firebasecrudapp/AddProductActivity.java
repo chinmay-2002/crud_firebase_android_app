@@ -62,7 +62,7 @@ public class AddProductActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         progressBar.setVisibility(View.GONE);
                         databaseReference.child(ProductId).setValue(productRVModal);
-                        Toast.makeText(AddProductActivity.this, "Product Added", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(AddProductActivity.this, "Hotel Added", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(AddProductActivity.this, MainActivity.class ));
                     }
 

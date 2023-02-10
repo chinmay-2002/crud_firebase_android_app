@@ -46,6 +46,7 @@ public class EditProductActivity extends AppCompatActivity {
         progressBar = findViewById(R.id.pbloading);
         firebaseDatabase = FirebaseDatabase.getInstance();
         productRVModal = getIntent().getParcelableExtra("course");
+
         if(productRVModal!=null){
             pname.setText(productRVModal.getProdname());
             pprice.setText(productRVModal.getProdprice());
@@ -75,20 +76,22 @@ public class EditProductActivity extends AppCompatActivity {
                 map.put("suitedfor", suitedfor);
                 map.put("productimg", productimg);
                 map.put("prodlink", prodlink);
+                map.put("productId", ProductId);
                 map.put("productDesc", courseDesc);
+
 
                 databaseReference.addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         progressBar.setVisibility(View.GONE);
                         databaseReference.updateChildren(map);
-                        Toast.makeText(EditProductActivity.this, "Product Updated", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditProductActivity.this, "Hotel Updated", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(EditProductActivity.this, MainActivity.class));
                     }
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(EditProductActivity.this, "Failed to update product", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(EditProductActivity.this, "Failed to update hotel", Toast.LENGTH_SHORT).show();
                     }
                 });
             }
@@ -104,7 +107,7 @@ public class EditProductActivity extends AppCompatActivity {
     }
     private void deleteProduct(){
         databaseReference.removeValue();
-        Toast.makeText(this, "Product Deleted", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Hotel Deleted", Toast.LENGTH_SHORT).show();
         startActivity(new Intent(EditProductActivity.this, MainActivity.class));
     }
 }

@@ -56,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                 String password = passwd.getText().toString();
                 if(TextUtils.isEmpty(username) || TextUtils.isEmpty(password)){
                     Toast.makeText(LoginActivity.this, "Please enter your credentials", Toast.LENGTH_SHORT).show();
+                    progressBar.setVisibility(View.GONE);
                     return;
                 }
                 else{
